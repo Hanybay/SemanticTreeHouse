@@ -17,35 +17,38 @@ public class DatabaseInitializer {
     private DataSource dataSource;
 
     public void initializeDatabase(String filePath) {
+        Connection connection = null;
         try {
-            // Chargement du fichier SQL
+            // Load SQL script
             String sqlScript = new String(Files.readAllBytes(Paths.get(filePath)));
-            System.err.println(sqlScript);
-
-            // Connexion à la base de données
-            try (Connection connection = dataSource.getConnection()) {
-                // Exécution du script SQL
-                System.err.println("Connection Db initializer");
-                try {
-                    Statement statement = connection.createStatement();
-                    String message = (statement == null) ? "Statement est null" : "Statement n'est pas null";
-                    System.out.println(message);
-                    System.err.println("Create statement Db initializer");
-                    boolean result = statement.execute(sqlScript);
-                    if (!result) {
-                        System.err.println("Erreur lors de l'exécution du script SQL");
-                    }
-                }
-                catch (SQLException e) {
-                    e.printStackTrace();
-                }
-                finally{
-
-                }
+    
+            // Get database connection
+            connection = dataSource.getConnection();
+            connection.setAutoCommit(false); // Start transaction
+    
+            // Execute SQL script
+            try (Statement statement = connection.createStatement()) {
+                statement.execute(sqlScript);
+                connection.commit(); // Commit transaction if successful
+                System.out.println("Database initialized successfully.");
+            } catch (SQLException e) {
+                connection.rollback(); // Rollback changes if there's an error
+                System.err.println("Error executing SQL script: " + e.getMessage());
             }
-        } catch (IOException | SQLException e) {
-            System.err.println("Dans le fichier initializer");
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.err.println("Error reading SQL script file: " + e.getMessage());
+        } catch (SQLException e) {
+            System.err.println("Error establishing database connection: " + e.getMessage());
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.setAutoCommit(true); // Reset auto-commit mode
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                System.err.println("Error closing database connection: " + e.getMessage());
+            }
         }
     }
+    
 }
