@@ -1,0 +1,2 @@
+- Le but final est de générer un fichier RDF contenant toutes les données récupérées depuis le fichier PDF ou bien la base de données créee en SQL.
+- Détaillé la boîte d'extraction en faisant une liste de fonction (pas besoin de faire diagramme CPE).

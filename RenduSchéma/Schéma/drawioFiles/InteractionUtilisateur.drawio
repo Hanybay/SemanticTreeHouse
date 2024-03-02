@@ -1,0 +1,73 @@
+<mxfile host="app.diagrams.net" modified="2024-02-14T22:47:07.804Z" agent="Mozilla/5.0 (X11; Linux x86_64; rv:123.0) Gecko/20100101 Firefox/123.0" etag="PZesvr58g8iqBRoO-w2z" version="23.1.2" type="device">
+  <diagram id="prtHgNgQTEPvFCAcTncT" name="Page-1">
+    <mxGraphModel dx="1687" dy="901" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-3" target="qphvHjbh9_9r1Frx_HH6-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-3" value="Ouverture du logiciel par l&#39;utilisateur" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="80" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-6" target="qphvHjbh9_9r1Frx_HH6-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-6" target="qphvHjbh9_9r1Frx_HH6-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-6" target="qphvHjbh9_9r1Frx_HH6-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-6" value="Choix du type de fichier contenant les données à charger " style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-7" target="qphvHjbh9_9r1Frx_HH6-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-7" value="Fichier de type PDF" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="120" y="320" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-8" target="qphvHjbh9_9r1Frx_HH6-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-8" value="Fichier de type SQL" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="320" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-9" target="qphvHjbh9_9r1Frx_HH6-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-9" value="Données depuis Wikidata ou site similaire" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="320" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-15" target="qphvHjbh9_9r1Frx_HH6-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-15" value="Extraction des données fournies par l&#39;utilisateur" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="480" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-20" target="qphvHjbh9_9r1Frx_HH6-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-20" value="Visionnage des données sous format RDF" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="610" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-22" value="Sauvegarde effectuée, le fichier est téléchargée" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="840" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-23" value="Sauvegarde non effectuée, le fichier est gardée jusqu&#39;à la fin de la session" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="840" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-24" target="qphvHjbh9_9r1Frx_HH6-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="qphvHjbh9_9r1Frx_HH6-24" target="qphvHjbh9_9r1Frx_HH6-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qphvHjbh9_9r1Frx_HH6-24" value="Possibiliter de faire une sauvegarde du fichier RDF" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="334" y="740" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
