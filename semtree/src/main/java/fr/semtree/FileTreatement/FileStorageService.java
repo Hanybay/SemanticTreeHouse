@@ -30,7 +30,6 @@ public class FileStorageService {
             Path filePath = Paths.get(UPLOAD_FOLDER + "/" + fileName);
             System.err.println(filePath);
             
-
             Files.write(filePath, file.getBytes());
 
             System.out.println("Fichier enregistré avec succès: " + fileName);

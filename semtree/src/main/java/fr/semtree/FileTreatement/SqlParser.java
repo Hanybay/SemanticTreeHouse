@@ -1,6 +1,8 @@
 package fr.semtree.FileTreatement;
 
+import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -33,8 +35,7 @@ public class SqlParser {
                 int id = resultSet.getInt("id_ALBUM");
                 String nom = resultSet.getString("nom_ALBUM");
 
-                System.err.println("On rentre ");
-                System.out.println(id + "    " + nom);
+                System.out.println("ID = " + id + " Album name = " + nom);
 
             }
             dbAccess.close();
@@ -44,6 +45,32 @@ public class SqlParser {
             e.getMessage();
             return false; 
         }
+    }
+
+    public ResultSet getAllFromTable(Connection connexion, String query){
+    try {
+        return dbAccess.executeQuery(query);
+    } 
+    catch (SQLException e) {
+        e.printStackTrace();
+        return null; 
+    }
+}
+
+    public boolean SqlAlbumToRDF(ResultSet result){
+        try {
+            while (result.next()) {
+                // Traitement des données récupérées
+                int id = result.getInt("id_ALBUM");
+                String nom = result.getString("nom_ALBUM");
+
+                System.out.println("ID = " + id + " Album name = " + nom);
+
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 }
 
