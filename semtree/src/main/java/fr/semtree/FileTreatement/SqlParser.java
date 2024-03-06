@@ -3,9 +3,17 @@ package fr.semtree.FileTreatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.vocabulary.RDF;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import fr.semtree.ColorfulError;
+import fr.semtree.RdfParser.RdfParser;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -21,6 +29,12 @@ public class SqlParser {
     @Autowired
     DatabaseAccess dbAccess;
 
+    @Autowired
+    RdfParser rdfParser;
+
+    @Autowired
+    FileStorageService fileStorer;
+
     public boolean handleSqlUpload(String filePath) {
         try {
             dbInitializer.initializeDatabase(filePath);
@@ -28,21 +42,74 @@ public class SqlParser {
             if(dbAccess.getConnection() != null){
                 System.err.println("Connection établie");
             }
-            ResultSet resultSet = dbAccess.executeQuery("SELECT * FROM ALBUM");
+            ColorfulError.printInfo("\n" + filePath + "\n");
+
+            ResultSet resAlbum = getAllFromTable(dbAccess.getConnection(), "SELECT * FROM ALBUM");
             
-            while (resultSet.next()) {
-                // Traitement des données récupérées
-                int id = resultSet.getInt("id_ALBUM");
-                String nom = resultSet.getString("nom_ALBUM");
+            // On crée l'en-tête du fichier RDF
+            Model model = rdfParser.CreateRDFHeader();
 
-                System.out.println("ID = " + id + " Album name = " + nom);
+            
+            Property artisteProp = model.createProperty(rdfParser.getExNS() + "artiste");
+            Property contenuProp = model.createProperty(rdfParser.getExNS() + "contenuAlbum");
 
+            // Récupération des données de la table ALBUM
+            Statement statement = dbAccess.getConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM ALBUM");
+            while (resAlbum.next()) {
+                int albumId = resultSet.getInt("id_ALBUM");
+                String nomAlbum = resultSet.getString("nom_ALBUM");
+
+
+                // On crée une ressource pour l'album
+                Resource albumResource = model.createResource(rdfParser.getExNS() + "album/" + albumId)
+                        .addProperty(RDF.type, model.createResource(rdfParser.getExNS() + "Album"))
+                        .addProperty(model.createProperty(rdfParser.getExNS() + "nomAlbum"), nomAlbum);
+
+
+                // On récupère les données de la table ContenuAlbum en utilisant l'ID d'album
+                ResultSet contenuResultSet = getAllFromTable(dbAccess.getConnection(), "SELECT * FROM ContenuAlbum WHERE id_Alb = " + albumId);
+                while (contenuResultSet.next()) {
+                    int numTrack = contenuResultSet.getInt("Num_Track");
+                    String titreTrack = contenuResultSet.getString("Titre_Track");
+
+
+                    // On crée une ressource pour chaque piste et On l'ajoute au contenu de l'album
+                    Resource trackResource = model.createResource(rdfParser.getExNS() + "track/" + albumId + "/" + numTrack)
+                            .addProperty(RDF.type, model.createResource(rdfParser.getExNS() + "Track"))
+                            .addProperty(model.createProperty(rdfParser.getExNS() + "titreTrack"), titreTrack);
+
+                    albumResource.addProperty(contenuProp, trackResource);
+                }
+
+
+                // On récupère les données de la table Artiste_Album en utilisant l'ID d'album
+                ResultSet artisteResultSet = getAllFromTable(dbAccess.getConnection(),"SELECT * FROM Artiste_Album WHERE id_Alb = " + albumId);
+                while (artisteResultSet.next()) {
+                    int artisteId = artisteResultSet.getInt("id_Art");
+
+                    // On crée une ressource pour l'artiste et on l'ajoute comme artiste de l'album
+                    Resource artisteResource = model.createResource(rdfParser.getExNS() + "artiste/" + artisteId)
+                            .addProperty(RDF.type, model.createResource(rdfParser.getExNS() + "Artiste"))
+                            .addProperty(model.createProperty(rdfParser.getExNS() + "idArtiste"), String.valueOf(artisteId));
+
+                    albumResource.addProperty(artisteProp, artisteResource);
+                }
             }
+
+            String rdfFilePath = fileStorer.changeFileExtension(filePath, "rdf");
+            fileStorer.setRdfFilePath(rdfFilePath);
+            rdfParser.writeModelInFile(model, rdfFilePath, "RDF/XML");
+
+            // Création d'un fichier jsonld du même nom 
+            String jsonLdPath = fileStorer.changeFileExtension(filePath, "jsonld");
+            rdfParser.writeModelInFile(model, jsonLdPath, "JSON-LD");
             dbAccess.close();
+            rdfParser.printRdf(rdfFilePath);
             return true;
         }
         catch (Exception e) {
-            e.getMessage();
+            ColorfulError.printError("IN METHOD handleSqlUpload \n" + e.getMessage());
             return false; 
         }
     }
@@ -52,6 +119,7 @@ public class SqlParser {
         return dbAccess.executeQuery(query);
     } 
     catch (SQLException e) {
+        ColorfulError.printError("IN METHOD getAllFromTable");
         e.printStackTrace();
         return null; 
     }

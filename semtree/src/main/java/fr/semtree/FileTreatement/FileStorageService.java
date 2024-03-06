@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,10 @@ public class FileStorageService {
     @Getter
     private static final String UPLOAD_FOLDER = "../FileUploads";
 
+    @Getter
+    @Setter
+    private String rdfFilePath = "";
+
     public String storeFile(MultipartFile file) {
         try {
             File directory = new File(UPLOAD_FOLDER);
@@ -28,7 +33,6 @@ public class FileStorageService {
             String fileName = file.getOriginalFilename();
 
             Path filePath = Paths.get(UPLOAD_FOLDER + "/" + fileName);
-            System.err.println(filePath);
             
             Files.write(filePath, file.getBytes());
 
@@ -39,5 +43,18 @@ public class FileStorageService {
             e.printStackTrace();
         }
         return "";
+    }
+
+
+    public String changeFileExtension(String filePath, String newExtension) {
+        int lastDotIndex = filePath.lastIndexOf(".");
+        if (lastDotIndex != -1) {
+            // Construction du nouveau chemin avec la nouvelle extension
+            String newPath = filePath.substring(0, lastDotIndex) + "." + newExtension;
+            return newPath;
+        } else {
+            // Si le fichier n'a pas d'extension, on ajoute directement la nouvelle extension
+            return filePath + "." + newExtension;
+        }
     }
 }

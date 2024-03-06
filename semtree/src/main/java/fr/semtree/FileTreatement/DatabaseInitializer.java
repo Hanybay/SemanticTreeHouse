@@ -1,6 +1,9 @@
 package fr.semtree.FileTreatement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import fr.semtree.ColorfulError;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
@@ -9,12 +12,6 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 @Service
 public class DatabaseInitializer {
@@ -36,11 +33,11 @@ public class DatabaseInitializer {
                     sqlStatementBuilder.append(line.trim());
                     // If line ends with semicolon, execute the statement
                     if (line.trim().endsWith(";")) {
-                        System.out.println("SQL Builder is " + sqlStatementBuilder);
+                        // ColorfulError.printInfo("SQL Builder is " + sqlStatementBuilder + "\n");
                         try {
                             jdbcTemplate.execute(sqlStatementBuilder.toString());
                         } catch (Exception e) {
-                            System.err.println("Error executing SQL statement: " + e.getMessage());
+                            ColorfulError.printError("Error executing SQL statement: \n \t" + e.getMessage() + "\n");
                         }
                         sqlStatementBuilder.setLength(0);
                     }

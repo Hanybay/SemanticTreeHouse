@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Semantic Tree House</title>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="treeData">
+            <tree
+                :data="treeData"
+                node-text="name"
+                layoutType="horizontal"
+            >
+            </tree>
+        </div>
+        <div v-else>
+            Loading...
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    treeData: null,
+                    orientation: 'horizontal',
+                    nodeText: 'Default Text' 
+                };
+            },
+            mounted() {
+                this.fetchTreeData();
+            },
+            methods: {
+                fetchTreeData() {
+                    axios.get('/api/rdf-to-json')
+                    .then(response => {
+                        console.log('Response:', response);
+                        this.treeData = this.convertJsonToTreeData(response.data);
+                        console.log('Converted tree data:', this.treeData);
+                    })
+                    .catch(error => {
+                        console.error('Error fetching tree data:', error);
+                    });
+                },
+                convertJsonToTreeData(jsonData) {
+                    const treeData = {
+                        name: 'Root',
+                        children: []
+                    };
+
+                    for (const item of jsonData['@graph']) {
+                        if (item['@type'] === 'ex:Album') {
+                            const albumNode = {
+                                name: item['ex:nomAlbum'],
+                                children: []
+                            };
+                            if (item['ex:contenuAlbum']) {
+                                for (const track of item['ex:contenuAlbum']) {
+                                    albumNode.children.push({ name: track['@id'] });
+                                }
+                            }
+                            treeData.children.push(albumNode);
+                        }
+                    }
+                    return treeData;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
