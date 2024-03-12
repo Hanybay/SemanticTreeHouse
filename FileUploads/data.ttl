@@ -1,0 +1,133 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/6>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE6" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/17>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 17" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/8>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 8" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/2>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "The Dark Side of the Moon" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/11>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 11" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/7>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE7" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/1>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE1" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/18>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 18" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/9>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 9" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/3>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 3" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/12>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 12" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/8>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE8" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/2>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE2" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/19>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 19" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/13>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 13" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/4>
+        rdf:type      rdf:Album;
+        rdf:artiste   <http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/6>;
+        rdf:nomAlbum  "Album 4" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/9>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE9" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/3>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE3" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/14>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 14" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/5>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 5" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/6>
+        rdf:type       rdf:Artiste;
+        rdf:idArtiste  "6" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/4>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE4" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/7>
+        rdf:type       rdf:Artiste;
+        rdf:idArtiste  "7" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/6>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 6" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/15>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 15" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/10>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE10" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/5>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE5" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/16>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 16" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/7>
+        rdf:type      rdf:Album;
+        rdf:nomAlbum  "Album 7" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/1>
+        rdf:type          rdf:Album;
+        rdf:contenuAlbum  <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/9> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/2> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/1> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/7> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/11> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/5> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/8> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/10> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/3> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/6> , <http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/4>;
+        rdf:nomAlbum      "Thriller" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#album/10>
+        rdf:type      rdf:Album;
+        rdf:artiste   <http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/7>;
+        rdf:nomAlbum  "Album 10" .
+
+<http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/11>
+        rdf:type        rdf:Track;
+        rdf:titreTrack  "TITRE11" .

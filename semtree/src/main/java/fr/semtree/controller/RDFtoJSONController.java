@@ -14,6 +14,7 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.StmtIterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -26,7 +27,7 @@ public class RDFtoJSONController {
     FileStorageService fileStorer;
     
     @GetMapping("/rdf-to-json")
-    public String convertRDFtoJSON() {
+    public JSONObject convertRDFtoJSON() {
         // Charger le fichier RDF/XML
 
         String tmp = fileStorer.getRdfFilePath();
@@ -35,7 +36,14 @@ public class RDFtoJSONController {
         try {
         // Lire le contenu du fichier JSON-LD
         String jsonLDString = new String(Files.readAllBytes(Paths.get(jsonPath)));
-        return jsonLDString;
+
+        JSONParser parser = new JSONParser();
+        JSONObject jsonObject = (JSONObject) parser.parse(jsonLDString);
+
+        // You can now manipulate or use the jsonObject as needed
+
+        // Convert the JSON object back to a JSON string and return
+        return jsonObject;
     } catch (Exception e) {
         // Gérer les erreurs de lecture de fichier
         e.printStackTrace();

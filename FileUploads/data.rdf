@@ -1,63 +1,126 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-    xmlns:ex="http://localhost:8080/">
-  <ex:Album rdf:about="http://localhost:8080/album/1">
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/7">
-        <ex:titreTrack>TITRE7</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/10">
-        <ex:titreTrack>TITRE10</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:nomAlbum>Thriller</ex:nomAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/4">
-        <ex:titreTrack>TITRE4</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/5">
-        <ex:titreTrack>TITRE5</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/2">
-        <ex:titreTrack>TITRE2</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/9">
-        <ex:titreTrack>TITRE9</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/3">
-        <ex:titreTrack>TITRE3</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/1">
-        <ex:titreTrack>TITRE1</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/8">
-        <ex:titreTrack>TITRE8</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/11">
-        <ex:titreTrack>TITRE11</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-    <ex:contenuAlbum>
-      <ex:Track rdf:about="http://localhost:8080/track/1/6">
-        <ex:titreTrack>TITRE6</ex:titreTrack>
-      </ex:Track>
-    </ex:contenuAlbum>
-  </ex:Album>
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/10">
+    <rdf:artiste>
+      <rdf:Artiste rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/7">
+        <rdf:idArtiste>7</rdf:idArtiste>
+      </rdf:Artiste>
+    </rdf:artiste>
+    <rdf:nomAlbum>Album 10</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/13">
+    <rdf:nomAlbum>Album 13</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/9">
+    <rdf:nomAlbum>Album 9</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/15">
+    <rdf:nomAlbum>Album 15</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/17">
+    <rdf:nomAlbum>Album 17</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/19">
+    <rdf:nomAlbum>Album 19</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/1">
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/9">
+        <rdf:titreTrack>TITRE9</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/2">
+        <rdf:titreTrack>TITRE2</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/1">
+        <rdf:titreTrack>TITRE1</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/7">
+        <rdf:titreTrack>TITRE7</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/11">
+        <rdf:titreTrack>TITRE11</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/5">
+        <rdf:titreTrack>TITRE5</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/8">
+        <rdf:titreTrack>TITRE8</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/10">
+        <rdf:titreTrack>TITRE10</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/3">
+        <rdf:titreTrack>TITRE3</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:nomAlbum>Thriller</rdf:nomAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/6">
+        <rdf:titreTrack>TITRE6</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+    <rdf:contenuAlbum>
+      <rdf:Track rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#track/1/4">
+        <rdf:titreTrack>TITRE4</rdf:titreTrack>
+      </rdf:Track>
+    </rdf:contenuAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/3">
+    <rdf:nomAlbum>Album 3</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/5">
+    <rdf:nomAlbum>Album 5</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/7">
+    <rdf:nomAlbum>Album 7</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/11">
+    <rdf:nomAlbum>Album 11</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/12">
+    <rdf:nomAlbum>Album 12</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/14">
+    <rdf:nomAlbum>Album 14</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/16">
+    <rdf:nomAlbum>Album 16</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/18">
+    <rdf:nomAlbum>Album 18</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/2">
+    <rdf:nomAlbum>The Dark Side of the Moon</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/4">
+    <rdf:artiste>
+      <rdf:Artiste rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#artiste/6">
+        <rdf:idArtiste>6</rdf:idArtiste>
+      </rdf:Artiste>
+    </rdf:artiste>
+    <rdf:nomAlbum>Album 4</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/6">
+    <rdf:nomAlbum>Album 6</rdf:nomAlbum>
+  </rdf:Album>
+  <rdf:Album rdf:about="http://www.w3.org/1999/02/22-rdf-syntax-ns#album/8">
+    <rdf:nomAlbum>Album 8</rdf:nomAlbum>
+  </rdf:Album>
 </rdf:RDF>

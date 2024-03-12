@@ -22,14 +22,13 @@ public class RdfParser implements ColorfulError{
     @Getter
     Model headerModel = ModelFactory.createDefaultModel();
     @Getter
-    String exNS = "http://localhost:8080/";
+    String exNS = "http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 
 
     public Model CreateRDFHeader(){
         
 
         // Préfixes pour les namespaces RDF
-        headerModel.setNsPrefix("ex", exNS);
         headerModel.setNsPrefix("rdf", "http://www.w3.org/1999/02/22-rdf-syntax-ns#");
         headerModel.setNsPrefix("rdfs", "http://www.w3.org/2000/01/rdf-schema#");
 

@@ -35,7 +35,7 @@ public class SqlParser {
     @Autowired
     FileStorageService fileStorer;
 
-    public boolean handleSqlUpload(String filePath) {
+    public void handleSqlUpload(String filePath) {
         try {
             dbInitializer.initializeDatabase(filePath);
             dbAccess.connect("/home/hany/FAC/M1/S8/Interoperabilite/Projet/semtree/artists.db");
@@ -44,7 +44,7 @@ public class SqlParser {
             }
             ColorfulError.printInfo("\n" + filePath + "\n");
 
-            ResultSet resAlbum = getAllFromTable(dbAccess.getConnection(), "SELECT * FROM ALBUM");
+            ResultSet resAlbum = getAllFromTable(dbAccess.getConnection(), "SELECT * FROM ALBUM ORDER BY id_ALBUM ASC");
             
             // On crée l'en-tête du fichier RDF
             Model model = rdfParser.CreateRDFHeader();
@@ -53,13 +53,10 @@ public class SqlParser {
             Property artisteProp = model.createProperty(rdfParser.getExNS() + "artiste");
             Property contenuProp = model.createProperty(rdfParser.getExNS() + "contenuAlbum");
 
-            // Récupération des données de la table ALBUM
-            Statement statement = dbAccess.getConnection().createStatement();
-            ResultSet resultSet = statement.executeQuery("SELECT * FROM ALBUM");
             while (resAlbum.next()) {
-                int albumId = resultSet.getInt("id_ALBUM");
-                String nomAlbum = resultSet.getString("nom_ALBUM");
-
+                int albumId = resAlbum.getInt("id_ALBUM");
+                String nomAlbum = resAlbum.getString("nom_ALBUM");
+                ColorfulError.printInfo(nomAlbum);
 
                 // On crée une ressource pour l'album
                 Resource albumResource = model.createResource(rdfParser.getExNS() + "album/" + albumId)
@@ -104,13 +101,17 @@ public class SqlParser {
             // Création d'un fichier jsonld du même nom 
             String jsonLdPath = fileStorer.changeFileExtension(filePath, "jsonld");
             rdfParser.writeModelInFile(model, jsonLdPath, "JSON-LD");
+            
+            // Création d'un fichier Turtle du même nom 
+            String turtledPath = fileStorer.changeFileExtension(filePath, "ttl");
+            rdfParser.writeModelInFile(model, turtledPath, "TURTLE");
+            
+            
             dbAccess.close();
-            rdfParser.printRdf(rdfFilePath);
-            return true;
+            // rdfParser.printRdf(rdfFilePath);
         }
         catch (Exception e) {
             ColorfulError.printError("IN METHOD handleSqlUpload \n" + e.getMessage());
-            return false; 
         }
     }
 
